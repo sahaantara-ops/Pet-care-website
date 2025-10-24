@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "../Layouts/HomeLayout";
-import Home from "../Pages/Home ";
+import Home from "../Home/Home";
 import Services from "../Pages/Services";
 import ServiceDetails from "../Pages/serviceDetails";
 
@@ -9,20 +9,22 @@ const router = createBrowserRouter(
     [
     {
         path:"/",
-        element:<HomeLayout></HomeLayout>,
+        Component:HomeLayout,
         children :  [
             {
-             path:"",
-             element:<Home></Home>,
+                index:true,
+                path:"/",
+                loader: () => fetch('public/services.json'),
+                Component:Home,
             },
-            {
-                path:"/Services/",
-                element:<Services></Services>
-            },
-            {
-            path:"/services/:Id",
-            element:<ServiceDetails></ServiceDetails>
-            },
+            // {
+            //     path:"/Services/",
+            //     element:<Services></Services>
+            // },
+            // {
+            // path:"/services/:Id",
+            // element:<ServiceDetails></ServiceDetails>
+            // },
         ],
     },
 
