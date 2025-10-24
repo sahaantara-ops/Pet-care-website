@@ -1,0 +1,74 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.postimg.cc/y8Q8rc0v/cat-1.webp",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.postimg.cc/90J6Ftms/cat-2.webp",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Boarding Kennels",
+    "providerName": "SnowHaven Pet Lodge",
+    "providerEmail": "stay@snowhaven.com",
+    "price": 40,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Warm and safe indoor kennels with temperature control for overnight pet stays.",
+    "image": "https://i.postimg.cc/8zZTS3tW/Kennel-e1688588326589.jpg",
+    "category": "Boarding"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Cold-Weather Vet Checkup",
+    "providerName": "FrostyTails Veterinary",
+    "providerEmail": "contact@frostytailsvet.com",
+    "price": 35,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Winter health checkup for pets, including fur coat inspection and hydration test.",
+    "image": "https://i.postimg.cc/CLJ3B8DW/OIP.webp",
+    "category": "Veterinary"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Pet-Friendly Winter Walk Service",
+    "providerName": "SnowSteps Walkers",
+    "providerEmail": "book@snowsteps.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 8,
+    "description": "Guided outdoor walks with warm gear and paw protection for dogs in snowy weather.",
+    "image": "https://i.postimg.cc/RFzsbCKs/OIP.webp",
+    "category": "Walking"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Winter Hydration Spa Treatment",
+    "providerName": "ArcticPaws Spa",
+    "providerEmail": "care@arcticpaws.com",
+    "price": 32,
+    "rating": 4.8,
+    "slotsAvailable": 4,
+    "description": "Hydrating treatment to prevent dry skin and shedding during the cold months.",
+    "image": "https://i.postimg.cc/8CGM27X6/OIP.webp",
+    "category": "Spa"
+  }
+]
