@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ServiceCard = ({Service}) => {
-    const {id, image,serviceName,price,rating} = Service;
+    const {serviceId, image,serviceName,price,rating} = Service;
     return (
         
               <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition">
@@ -13,7 +13,7 @@ const ServiceCard = ({Service}) => {
         <p className="text-gray-500">⭐ Rating: {rating}</p>
         <p className="font-semibold text-primary">💰 Price: ${price}</p>
         <div className="card-actions justify-end">
-          <Link to={`/services/${id}`} className="btn btn-primary btn-sm text-white">
+          <Link to={`/service/${serviceId}`} className="btn btn-primary btn-sm text-white">
             View Details
           </Link>
         </div>

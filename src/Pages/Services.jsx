@@ -3,18 +3,19 @@ import { useEffect, } from 'react';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
-  const [services, setServices] = useState([]);
-  const { serviceId } = services;
+  const [service, setServices] = useState([]);
+  
 
 
   useEffect(() => {
-    // Example: Replace this with your Firebase or real API endpoint
-    fetch("/public.json")
+    
+    fetch("/data/services.json")
+
       .then((res) => res.json())
       .then((data) => setServices(data))
       .catch((error) => console.error("Error fetching services:", error));
   }, []);
-
+  console.log(service);
   return (
      
      <section className="py-16 bg-[#f8f4e1]">
@@ -23,8 +24,9 @@ const Services = () => {
       </h2>
 
       <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10">
-        {services.map((service) => (
-          <ServiceCard key={serviceId} services={service} />
+        {service.map((service) => (
+          <ServiceCard key={Services.serviceId} service={service} />
+
         ))}
       </div>
     </section>
