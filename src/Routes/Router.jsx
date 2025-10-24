@@ -14,7 +14,7 @@ const router = createBrowserRouter(
             {
                 index:true,
                 path:"/",
-                loader: () => fetch('public/services.json'),
+                loader: () => fetch('public.json'),
                 Component:Home,
             },
             // {
