@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({Service}) => {
-    const {serviceId, image,serviceName,price,rating} = Service;
+    const {serviceId, image, serviceName, price, rating} = Service;
+    console.log(Service);
     return (
         
               <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition">

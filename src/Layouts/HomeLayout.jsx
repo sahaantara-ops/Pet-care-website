@@ -12,6 +12,7 @@ const HomeLayout = () => {
             </header>
             <main>
                 <section className='main'> 
+                    <Outlet></Outlet>
                   <HeroSection></HeroSection>
                 </section>
             </main>

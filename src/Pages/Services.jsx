@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import { useEffect, } from 'react';
+import React, { Suspense, useState } from 'react';
+
 import ServiceCard from './ServiceCard';
 
-const Services = () => {
-  const [service, setServices] = useState([]);
+const Services = ({data}) => {
+  const [service, setService] = useState([]);
   
+ console.log (data);
 
-
-  useEffect(() => {
+  // useEffect(() => {
     
-    fetch("/data/services.json")
+  //   fetch("/data/services.json")
 
-      .then((res) => res.json())
-      .then((data) => setServices(data))
-      .catch((error) => console.error("Error fetching services:", error));
-  }, []);
-  console.log(service);
+  //     .then((res) => res.json())
+  //     .then((data) => setServices(data))
+  //     .catch((error) => console.error("Error fetching services:", error));
+  // }, []);
+  // console.log(service);
   return (
      
      <section className="py-16 bg-[#f8f4e1]">
@@ -24,10 +24,12 @@ const Services = () => {
       </h2>
 
       <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10">
-        {service.map((service) => (
+        <Suspense fallback={<span className="loading loading-ring loading-xl"></span>}>
+          {data.map((service) => 
           <ServiceCard key={Services.serviceId} service={service} />
 
-        ))}
+        )} 
+        </Suspense>
       </div>
     </section>
   );
