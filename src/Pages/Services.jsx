@@ -1,21 +1,23 @@
 import React, { Suspense, useState } from 'react';
+import { useEffect } from 'react';
+
 
 import ServiceCard from './ServiceCard';
 
 const Services = ({data}) => {
-  const [service, setService] = useState([]);
+  const [Services, setServices] = useState([]);
   
  console.log (data);
 
-  // useEffect(() => {
+  useEffect(() => {
     
-  //   fetch("/data/services.json")
+    fetch("../../public.json")
 
-  //     .then((res) => res.json())
-  //     .then((data) => setServices(data))
-  //     .catch((error) => console.error("Error fetching services:", error));
-  // }, []);
-  // console.log(service);
+      .then((res) => res.json())
+      .then((data) => setServices(data))
+      .catch((error) => console.error("Error fetching services:", error));
+  }, []);
+  
   return (
      
      <section className="py-16 bg-[#f8f4e1]">

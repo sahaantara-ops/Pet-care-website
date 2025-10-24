@@ -3,6 +3,7 @@ import HomeLayout from "../Layouts/HomeLayout";
 import Home from "../Home/Home";
 import Services from "../Pages/Services";
 import ServiceDetails from "../Pages/serviceDetails";
+import ProtectedRoutes from "../components/PtotectedRoutes/ProtectedRoutes";
 
 
 const router = createBrowserRouter(
@@ -17,10 +18,19 @@ const router = createBrowserRouter(
                 loader: () => fetch('public.json'),
                 Component:Home,
             },
-            // {
-            //     path:"/Services/",
-            //     element:<Services></Services>
-            // },
+            {
+                path:"/Services",
+                Component:Services,
+            },
+            {
+            path: "/service/:id",
+            Component:ProtectedRoutes,
+            //  element: (
+            //  <ProtectedRoute>
+            //  <ServiceDetails />
+            //  </ProtectedRoute>
+            //   ),
+              }
             // {
             // path:"/services/:Id",
             // element:<ServiceDetails></ServiceDetails>

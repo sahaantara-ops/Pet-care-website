@@ -3,6 +3,8 @@ import { Outlet } from 'react-router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
+import TipsSection from '../Pages/tipSection';
+import ExpertVets from '../Pages/ExpertVets';
 
 const HomeLayout = () => {
     return (
@@ -13,7 +15,8 @@ const HomeLayout = () => {
             <main>
                 <section className='main'> 
                     <Outlet></Outlet>
-                  <HeroSection></HeroSection>
+                    <TipsSection></TipsSection>
+                    <ExpertVets></ExpertVets>
                 </section>
             </main>
             <footer>
