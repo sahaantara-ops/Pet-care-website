@@ -1,22 +1,22 @@
-import React, { Suspense, useState } from 'react';
-import { useEffect } from 'react';
+import React, { Suspense,  } from 'react';
+
 
 
 import ServiceCard from './ServiceCard';
 
 const Services = ({data}) => {
-  const [Services, setServices] = useState([]);
+//   const [Services, setServices] = useState([]);
   
- console.log (data);
+//  console.log (data);
 
-  useEffect(() => {
+//   useEffect(() => {
     
-    fetch("../../public.json")
+//     fetch("../../public.json")
 
-      .then((res) => res.json())
-      .then((data) => setServices(data))
-      .catch((error) => console.error("Error fetching services:", error));
-  }, []);
+//       .then((res) => res.json())
+//       .then((data) => setServices(data))
+//       .catch((error) => console.error("Error fetching services:", error));
+//   }, []);
   
   return (
      
