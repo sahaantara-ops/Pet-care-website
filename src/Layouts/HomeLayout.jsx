@@ -14,9 +14,14 @@ const HomeLayout = () => {
             </header>
             <main>
                 <section className='main'> 
-                    <Outlet></Outlet>
+
                     <TipsSection></TipsSection>
                     <ExpertVets></ExpertVets>
+                    <Outlet></Outlet>
+                    
+                </section>
+                <section>
+                    
                 </section>
             </main>
             <footer>
@@ -26,4 +31,11 @@ const HomeLayout = () => {
     );
 };
 
+
+
+
+
+
 export default HomeLayout;
+
+

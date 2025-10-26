@@ -21,6 +21,7 @@ const ServiceDetails = () => {
     toast.success("Service booked successfully!");
     e.target.reset();
   };
+  
 
   if (!service) return <p>Loading...</p>;
 

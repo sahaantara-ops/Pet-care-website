@@ -1,10 +1,23 @@
 import React from 'react';
 import ServiceDetails from '../Pages/serviceDetails';
+import Navbar from '../components/Navbar';
+import { Outlet } from 'react-router';
+import Footer from '../components/Footer';
 
 const ServiceLayout = () => {
     return (
         <div>
-            <ServiceDetails></ServiceDetails>
+            <header>
+           <Navbar></Navbar>
+           </header>
+            <main>
+           <Outlet></Outlet>
+           </main>
+           <footer>
+
+           <Footer></Footer>
+           </footer>
+            
         </div>
     );
 };
