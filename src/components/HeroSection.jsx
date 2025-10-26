@@ -3,7 +3,7 @@ import React from 'react';
 import image from '../assets/bg-image.webp';
 import ServiceCard from '../Pages/ServiceCard';
 import { useNavigate } from 'react-router-dom'; // fixed
-import { useAuth } from '../contexts/AuthContext.jsx';
+import { useAuth } from '../Context/AuthContext';
 
 const HeroSection = () => {
     const navigate = useNavigate();
