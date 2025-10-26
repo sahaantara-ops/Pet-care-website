@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { Outlet } from 'react-router';
-import LogIn from '../Pages/LogIn';
+
 
 const AuthLayout = () => {
     return (
@@ -11,7 +11,7 @@ const AuthLayout = () => {
             </header>
             <main>
                 <Outlet></Outlet>
-                {/* <LogIn></LogIn> */}
+               
             </main>
         </div>
     );

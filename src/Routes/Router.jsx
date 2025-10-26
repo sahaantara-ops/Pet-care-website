@@ -4,9 +4,11 @@ import Home from "../Home/Home";
 import Services from "../Pages/Services";
 
 import LogIn from "../Pages/LogIn";
-import Register from "../Pages/SignUp";
+
 import SignUp from "../Pages/SignUp";
 import AuthLayout from "../Layouts/AuthLayout";
+
+import ServiceDetails from "../Pages/serviceDetails";
 
 
 const router = createBrowserRouter(
@@ -25,6 +27,12 @@ const router = createBrowserRouter(
                 path:"/Services",
                 Component:Services,
             },
+            {
+                 path: "/services/:id", // 👈 dynamic route for details page
+                element: (
+                <ServiceDetails></ServiceDetails>
+        ),
+        }
            
            
         ],
@@ -35,11 +43,11 @@ const router = createBrowserRouter(
         element:<AuthLayout></AuthLayout>,
         children :[
             {
-                path :"/auth/Login",
+                path :"/auth/login",
                 Component:LogIn,
             },
             {
-                path : "/auth/SignUp",
+                path : "/auth/signUp",
                 Component:SignUp,
             }
         ],

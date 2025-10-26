@@ -60,14 +60,15 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="flex gap-3">
-            <a href="/login" className="btn btn-outline btn-primary btn-sm">
+            < Link to="/auth/login"  className="btn btn-outline btn-primary btn-sm">
               Login
-            </a>
-            <a href="/register" className="btn btn-primary btn-sm text-white">
-              Register
-            </a>
+            </Link>
+            <Link to ="/auth/signUp" className="btn btn-primary btn-sm text-white">
+              SignUp
+            </Link>
           </div>
         )}
+        <></>
       </div>
     </div>
   );

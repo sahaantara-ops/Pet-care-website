@@ -37,7 +37,7 @@ const LogIn = () => {
           <input type="password" className="input" placeholder="Password" />
           <div><a className="link link-hover">Forgot password?</a></div>
           
-          <button className="btn btn-neutral mt-4">Login</button>
+          < button className="btn btn-neutral mt-4">Login</button>
           <p className=' font-extrabold text-center p-5'>Don't have an account?<Link className='text-red-600' to="/auth/SignUp">SignUp</Link>  </p>
            <p className='text-center'>or</p>
         <button onClick={handleGoogle} className="btn mt-4">Sign in with Google <FaGoogle /></button>

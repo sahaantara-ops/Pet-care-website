@@ -1,16 +1,19 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Services from "./Pages/Services";
-import ServiceDetails from "./Pages/serviceDetails";
+import { RouterProvider } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import router from "./Routes/Router";
+
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/services/:id" element={<ServiceDetails />} />
-    </Routes>
+    <>
+     <RouterProvider router={router} />
+      <Toaster position="top-center" reverseOrder={false} />
+     
+    </>
   );
 }
+
 export default App;
 

@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router';
+import toast from 'react-hot-toast';
+
+
+
+
 
 const SignUp = () => {
+
+  
+
+
+
+
     const handleSignUp=(e)=>{
       e.preventDefault();
       console.log(e.target);
@@ -10,10 +21,11 @@ const SignUp = () => {
       const photo = form.photoURL.value;
       const email = form.email.value;
       const password = form.password.value;
-      console.log ({name,photo,email,password})
+      console.log ({name,photo,email,password});
+      toast.success("Sign up form submitted! (Implement Firebase next)");
+};
 
-
-    };
+    
     return (
             <div className='flex justify-center mt-30 items-center'>
          <div className="card bg-base-200 w-full max-w-sm shadow-2xl py-5">
@@ -22,9 +34,8 @@ const SignUp = () => {
         <fieldset className="fieldset">
             <label className="Name">Name</label>
              <input
-             name="name"
-             type="name" 
-             ClassName="input" 
+             type="Name" 
+             className="input" 
              placeholder="Name" 
              required/>
             <label className="Photo URL">Photo URL</label>
