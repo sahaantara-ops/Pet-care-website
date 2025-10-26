@@ -24,15 +24,13 @@ const router = createBrowserRouter(
                 Component:Home,
             },
             {
-                path:"/Services",
+                path:"/services",
                 Component:Services,
             },
             {
-                 path: "/services/:id", // 👈 dynamic route for details page
-                element: (
-                <ServiceDetails></ServiceDetails>
-        ),
-        }
+                 path: "/services/:id", 
+                Component:ServiceDetails,
+            },   
            
            
         ],

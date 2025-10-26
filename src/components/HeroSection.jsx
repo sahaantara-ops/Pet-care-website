@@ -11,10 +11,13 @@ const HeroSection = () => {
 
     const handleOrderClick = () => {
         const serviceId = 'winter-coat';
+        console.log("Clicked!", user);
         if (user) {
+             console.log("Navigating to:", `/services/${serviceId}`);
             navigate(`/services/${serviceId}`);
         } else {
-            navigate('/login', { state: { from: `/services/${serviceId}` } });
+             console.log("Navigating to login:", `/auth/login`);
+             navigate("/auth/login", { state: { from: `/services/${serviceId}` } });
         }
     };
 
