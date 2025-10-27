@@ -1,14 +1,21 @@
-import React from 'react';
+import { React}  from 'react';
 import { Link } from 'react-router';
 import toast from 'react-hot-toast';
+
+import { useAuth } from '../Context/AuthContext';
+
 
 
 
 
 
 const SignUp = () => {
+  const { user } = useAuth();
 
-  
+//    const signUp = () => {
+//     const [user, setUser] = useState({});
+//   //   const [show , setShow] = useState(false);
+//    }
 
 
 
@@ -22,6 +29,7 @@ const SignUp = () => {
       const email = form.email.value;
       const password = form.password.value;
       console.log ({name,photo,email,password});
+      
       toast.success("Sign up form submitted! (Implement Firebase next)");
 };
 
@@ -29,8 +37,11 @@ const SignUp = () => {
     return (
             <div className='flex justify-center mt-30 items-center'>
          <div className="card bg-base-200 w-full max-w-sm shadow-2xl py-5">
-            <h2 className='text-2xl font-semibold text-center'>SignUp Your Account</h2>
-      <form onSubmit={handleSignUp} className="card-body">
+       <h2 className='text-2xl font-semibold text-center'>SignUp Your Account</h2>
+       { user? ("user ache" 
+
+       ) : (
+        <form onSubmit={handleSignUp} className="card-body">
         <fieldset className="fieldset">
             <label className="Name">Name</label>
              <input
@@ -65,6 +76,10 @@ const SignUp = () => {
           <p className=' font-extrabold text-center p-5'>Already have an account?<Link className='text-red-600' to="/auth/Login">Login</Link >  </p>
         </fieldset>
       </form>
+
+       )}
+       
+      
       </div>
       </div>
     );

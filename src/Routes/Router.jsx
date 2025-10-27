@@ -9,7 +9,9 @@ import SignUp from "../Pages/SignUp";
 import AuthLayout from "../Layouts/AuthLayout";
 
 import ServiceDetails from "../Pages/serviceDetails";
-import ProfileLayout from "./Layouts/profileLayout";
+import ProfileLayout from "../Layouts/profileLayout";
+import MyProfile from "../Pages/Myprofile";
+
 
 
 
@@ -30,8 +32,11 @@ const router = createBrowserRouter(
                 element:<Services></Services>,
             },
             {
-                 path: "/services/:id", 
-                 element:<ServiceDetails></ServiceDetails>,
+                 path: "/services/:id",
+                 
+                 element:
+                    <ServiceDetails></ServiceDetails>,
+                   
 
             },   
             
@@ -43,7 +48,7 @@ const router = createBrowserRouter(
     path: "/profile",
     Component: ProfileLayout,
     children: [
-      { index: true, element: <MyProfile /> }, // or whatever your profile page is
+      { index: true, element: <MyProfile /> },
     ],
      },
 

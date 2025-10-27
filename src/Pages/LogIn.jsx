@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { auth } from "../FireBase/Firebase";
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, sendPasswordResetEmail, signInWithPopup } from 'firebase/auth';
 import { FaGoogle } from "react-icons/fa";
+
+import { useRef } from 'react';
+
 
 const provider = new GoogleAuthProvider();
 
@@ -12,8 +15,10 @@ const LogIn = () => {
      const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
-    
+    const emailRef = useRef(null);
 
+    
+  const [ email, setEmail ] = useState (null);
 
    const handleGoogle = () => {
     signInWithPopup(auth, provider)
@@ -22,6 +27,16 @@ const LogIn = () => {
         navigate(from, { replace: true });
       })
       .catch(() => toast.error("Google Sign-in Failed"));
+  };
+  const handleForgotPassword = (e) =>{
+    console.log();
+    
+    const email = emailRef.current ;
+    sendPasswordResetEmail(auth, email).then ((res) => {
+      toast.success ("check your email to reset password")
+    }) .catch((e) => {
+      toast .error (e.message)
+    });
   };
 
 
@@ -32,10 +47,13 @@ const LogIn = () => {
       <div className="card-body">
         <fieldset className="fieldset">
           <label className="label">Email</label>
-          <input type="email" className="input" placeholder="Email" />
+          <input type="email" name="email" value ={email}
+           onChange={(e) => setEmail(e.target.value)}
+          className="input" placeholder="Email" />
           <label className="label">Password</label>
           <input type="password" className="input" placeholder="Password" />
-          <div><a className="link link-hover">Forgot password?</a></div>
+          <button 
+          className="link  link-hover" onClick={handleForgotPassword } type='button'>Forget Password?</button>
           
           <Link to = "/services/:id" className="btn btn-outline btn-primary btn-sm">Login</Link>
           <p className=' font-extrabold text-center p-5'>Don't have an account?<Link className='text-red-600' to="/auth/SignUp">SignUp</Link>  </p>

@@ -10,14 +10,13 @@ import HeroSection from './components/HeroSection.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <PrivateRoute>
-  <ServiceDetails />
-</PrivateRoute> */}
+  
 
     <AuthProvider>
-      <RouterProvider router={router}></RouterProvider>
-      
+    <RouterProvider router={router}></RouterProvider>
+      <App></App>
     </AuthProvider>
-    <App></App>
+    
+    
   </StrictMode>,
 )
