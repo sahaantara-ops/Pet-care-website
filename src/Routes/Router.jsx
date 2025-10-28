@@ -11,6 +11,7 @@ import AuthLayout from "../Layouts/AuthLayout";
 import ServiceDetails from "../Pages/serviceDetails";
 import ProfileLayout from "../Layouts/profileLayout";
 import MyProfile from "../Pages/Myprofile";
+import PrivateRoutes from "../components/PrivateRoutes/PrivateRoutes";
 
 
 
@@ -34,8 +35,9 @@ const router = createBrowserRouter(
             {
                  path: "/services/:id",
                  
-                 element:
+                 element:<PrivateRoutes>
                     <ServiceDetails></ServiceDetails>,
+                    </PrivateRoutes>
                    
 
             },   

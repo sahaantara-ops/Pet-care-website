@@ -6,6 +6,7 @@ import React from "react";
 
 const MyProfile = () => {
   const { user } = useAuth();
+  
 
   if (!user) {
     return (

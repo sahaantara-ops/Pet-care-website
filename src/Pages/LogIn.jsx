@@ -18,7 +18,7 @@ const LogIn = () => {
     const emailRef = useRef(null);
 
     
-  const [ email, setEmail ] = useState (null);
+  const [ email, setEmail ] = useState("");
 
    const handleGoogle = () => {
     signInWithPopup(auth, provider)
@@ -38,7 +38,9 @@ const LogIn = () => {
       toast .error (e.message)
     });
   };
-
+    
+  
+  console.log(location);
 
     return (
         <div className='flex justify-center mt-30 items-center'>

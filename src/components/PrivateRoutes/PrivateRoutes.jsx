@@ -1,21 +1,22 @@
-// import React from 'react';
-// import { Navigate, useLocation } from "react-router-dom";
-// import { useAuthState } from "react-firebase-hooks/auth";
-// import { auth } from "../firebase/firebase.config";
+
+import { Navigate, useLocation } from "react-router-dom";
+
+import { AuthContext, useAuth } from '../../Context/AuthContext';
 
 
-// const PrivateRoutes = ({ children }) => {
-//   const [user, loading] = useAuthState(auth);
-//   const location = useLocation();
+const PrivateRoutes = ({ children }) => {
+   const { user, loading } = useAuth();
+  const location = useLocation();
+  console.log(location)
 
-//   if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>;
 
-//   if (!user) {
-//     // redirect to login page and save current path
-//     return <Navigate to="/auth/login" state={{ from: location }} replace />;
-//   }
+  if (!user) {
+    // redirect to login page and save current path
+    return <Navigate to="/auth/login" state={{ from: location }} replace />;
+  }
 
-//   return children;
-// };
+  return children;
+};
 
-// export default PrivateRoutes;
+export default PrivateRoutes;

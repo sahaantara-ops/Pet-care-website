@@ -1,8 +1,8 @@
-import { React}  from 'react';
-import { Link } from 'react-router';
+
+import { Link, } from 'react-router';
 import toast from 'react-hot-toast';
 
-import { useAuth } from '../Context/AuthContext';
+import { AuthContext, useAuth } from '../Context/AuthContext';
 
 
 
@@ -10,17 +10,12 @@ import { useAuth } from '../Context/AuthContext';
 
 
 const SignUp = () => {
+  
   const { user } = useAuth();
-
-//    const signUp = () => {
-//     const [user, setUser] = useState({});
-//   //   const [show , setShow] = useState(false);
-//    }
-
-
-
-
-    const handleSignUp=(e)=>{
+  
+    
+  
+      const handleSignUp=(e)=>{
       e.preventDefault();
       console.log(e.target);
       const form = e.target;
@@ -32,6 +27,10 @@ const SignUp = () => {
       
       toast.success("Sign up form submitted! (Implement Firebase next)");
 };
+   
+
+      
+      
 
     
     return (
