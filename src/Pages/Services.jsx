@@ -1,11 +1,10 @@
 import React, { Suspense,  } from 'react';
+import ServiceCard from '../components/ServiceCard/ServiceCard';
+import { useLoaderData } from 'react-router';
 
 
-
-import ServiceCard from './ServiceCard';
-
-const Services = ({data}) => {
-
+const Services = () => {
+  const servicesData = useLoaderData();
   
   return (
      
@@ -16,7 +15,7 @@ const Services = ({data}) => {
 
       <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10">
         <Suspense fallback={<span className="loading loading-ring loading-xl"></span>}>
-          {data.map((service) => 
+          {servicesData.map((service) => 
           <ServiceCard key={Services.serviceId} service={service} />
 
         )} 

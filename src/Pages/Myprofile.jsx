@@ -9,9 +9,9 @@ const MyProfile = () => {
 
   return (
     
-    <div className="min-h-screen bg-amber-200 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-amber-100 flex items-center justify-center px-4">
       
-      <div className="bg-amber-200 shadow-lg rounded-2xl w-full max-w-md p-6">
+      <div className="bg-amber-100 shadow-lg rounded-2xl w-full max-w-md p-6">
         {/* Profile Image */}
         <div className="flex justify-center">
           <img
@@ -32,7 +32,7 @@ const MyProfile = () => {
         {/* Update Button */}
         <div className="mt-6">
           <button
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-lg transition duration-300"
+            className="w-full bg-amber-500 hover-gallery text-white font-medium py-2 rounded-lg transition duration-300"
           >
             Update Profile
           </button>

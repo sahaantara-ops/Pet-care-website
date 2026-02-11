@@ -32,19 +32,23 @@ const router = createBrowserRouter(
             {
                 path:"/services",
                 element:<Services></Services>,
-            },
-            {
-                 path: "/services/:id",
-                 
-                 element:
-                    <ServiceDetails></ServiceDetails>,
-                   
-                   
+               loader: async () => {
+               const res = await fetch("/public.json");
+                return res.json();
+            }
 
-            },   
+            },
             
-           
-        ],
+            {
+            path: "/service/:id",
+            element: (
+            <PrivateRoutes>
+           <ServiceDetails />
+          </PrivateRoutes>
+         ),
+          }
+
+],
     },
 
     {
@@ -69,10 +73,10 @@ const router = createBrowserRouter(
             }
         ],
     },
-    {
-        path:"/services",
-        element:<h3>Services Layout</h3>
-    },
+    // {
+    //     path:"/services",
+    //     element:<h3>Services Layout</h3>
+    // },
     {
         path:"*",
         element:<h3>404 Not Found</h3>
