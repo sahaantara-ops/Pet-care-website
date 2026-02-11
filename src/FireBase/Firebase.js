@@ -16,7 +16,7 @@ const firebaseConfig = {
  
 
 };
-console.log("API KEY:", import.meta.env.VITE_apiKey);
+console.log("API KEY:", import.meta.env.VITE_FIREBASE_API_KEY);
 
 
 

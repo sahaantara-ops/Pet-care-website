@@ -1,9 +1,10 @@
 import React, { useContext, useRef, useState } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+
 
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
-import { toast } from "react-toastify";
+import {  toast } from 'react-toastify';
 import { AuthContext } from "../Context/AuthContext";
 import MyContainer from "../components/MyContainer/MyContainer";
 
@@ -17,19 +18,20 @@ const Signin = () => {
     sendPassResetEmailFunc,
     setLoading,
     setUser,
-    // user,
+    user,
   } = useContext(AuthContext);
   const location = useLocation();
   const from = location.state || "/";
   const navigate = useNavigate();
 
-//  if (user) {
-//   return <Navigate to="/" replace />;
-// }
+ const emailRef = useRef(null); 
+  if (user) {
+   return <Navigate to="/" replace />;
+}
 
   console.log(location);
 
-  const emailRef = useRef(null);
+  
 
   // const [email, setEmail] = useState(null);
 
@@ -143,7 +145,7 @@ const Signin = () => {
                 </span>
               </div>
 
-              <button className="btn btn-soft btn-warning ">Log In</button>
+              <button className="btn btn-soft btn-warning">Log In</button>
 
               <button
                 className="hover:underline cursor-pointer ml-10"

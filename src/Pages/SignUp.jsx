@@ -186,7 +186,7 @@ const Signup = () => {
                 </span>
               </div>
 
-             <button className="btn btn-soft btn-warning">Sign Up</button>
+             <Link to ='/' className="btn btn-soft btn-warning">Sign Up</Link>
 
               <div className="text-center mt-3">
                 <p className="text-sm text-white/80">

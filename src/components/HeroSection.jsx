@@ -3,11 +3,12 @@ import React from 'react';
 import image from '../assets/bg-image.webp';
 import ServiceCard from '../Pages/ServiceCard';
 import { useNavigate } from 'react-router-dom'; // fixed
-import { useAuth } from '../Context/AuthContext';
+import { AuthContext } from '../Context/AuthContext';
+import { use } from 'react';
 
 const HeroSection = () => {
     const navigate = useNavigate();
-    const { user } = useAuth();
+    const { user } = use(AuthContext);
 
     const handleOrderClick = () => {
         const serviceId = 'winter-coat';
