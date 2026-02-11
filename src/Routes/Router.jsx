@@ -3,7 +3,7 @@ import HomeLayout from "../Layouts/HomeLayout";
 import Home from "../Home/Home";
 import Services from "../Pages/Services";
 
-import LogIn from "../Pages/LogIn";
+import LogIn from "../Pages/SignIn";
 
 import SignUp from "../Pages/SignUp";
 import AuthLayout from "../Layouts/AuthLayout";
@@ -12,6 +12,7 @@ import ServiceDetails from "../Pages/serviceDetails";
 import ProfileLayout from "../Layouts/profileLayout";
 import MyProfile from "../Pages/Myprofile";
 import PrivateRoutes from "../components/PrivateRoutes/PrivateRoutes";
+import Signin from "../Pages/SignIn";
 
 
 
@@ -25,7 +26,7 @@ const router = createBrowserRouter(
             {
                 index:true,
                 path:"/",
-                loader: () => fetch('public.json'),
+                loader: () => fetch('/public.json'),
                 element:<Home></Home>,
             },
             {
@@ -59,11 +60,11 @@ const router = createBrowserRouter(
         element:<AuthLayout></AuthLayout>,
         children :[
             {
-                path :"/auth/login",
-                Component:LogIn,
+                path :"signIn",
+                Component:Signin,
             },
             {
-                path : "/auth/signUp",
+                path : "signUp",
                 Component:SignUp,
             }
         ],

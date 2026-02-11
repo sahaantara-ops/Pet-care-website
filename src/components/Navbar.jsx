@@ -61,7 +61,7 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="flex gap-3">
-            < Link to="/auth/login"  className="btn btn-outline btn-primary btn-sm">
+            < Link to="/auth/signIn"  className="btn btn-outline btn-primary btn-sm">
               Login
             </Link>
             <Link to ="/auth/signUp" className="btn btn-primary btn-sm text-white">

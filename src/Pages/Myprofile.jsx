@@ -1,42 +1,40 @@
-import React from "react";
- import { useAuth } from '../Context/AuthContext';
- import toast from "react-hot-toast";
-
-
-
 const MyProfile = () => {
-  const { user } = useAuth();
-  
+  // Dummy user data (replace later with real auth data)
+  const user = {
+    name: "Antara Saha",
+    email: "antara@example.com",
+    photo:
+      "https://i.pravatar.cc/150?img=47", // placeholder image
+  };
 
-  if (!user) {
-    return (
-
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <h2 className="text-2xl font-bold text-blue-900">No user logged in</h2>
-        <p className="text-gray-600 mt-2">Please log in to view your profile.</p>
-      </div>
-    );
-  }
- console.log (user)
   return (
-    <div className="flex flex-col items-center justify-center bg-[#fff6e9] min-h-screen p-10">
-      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md text-center">
-        <img
-          src={user.photoURL || "https://tse2.mm.bing.net/th/id/OIP.ilyl0uRnuDliNcSxDcnvrAHaNK?rs=1&pid=ImgDetMain&o=7&rm=3"}
-          alt="Profile"
-          className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-amber-300"
-        />
-        <h2 className="text-2xl font-bold text-blue-900 mb-2">
-          {user.displayName || "User Name"}
-        </h2>
-        <p className="text-gray-700 mb-4">{user.email}</p>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+      <div className="bg-white shadow-lg rounded-2xl w-full max-w-md p-6">
+        {/* Profile Image */}
+        <div className="flex justify-center">
+          <img
+            src={user.photo}
+            alt="Profile"
+            className="w-28 h-28 rounded-full border-4 border-indigo-500 object-cover"
+          />
+        </div>
 
-        <button
-          className="bg-amber-400 text-white px-5 py-2 rounded-full hover:bg-amber-500"
-          onClick={() =>  toast . success("Update Profile successfully!")}
-        >
-          Update Profile
-        </button>
+        {/* User Info */}
+        <div className="text-center mt-4">
+          <h2 className="text-2xl font-semibold text-gray-800">
+            {user.name}
+          </h2>
+          <p className="text-gray-500 mt-1">{user.email}</p>
+        </div>
+
+        {/* Update Button */}
+        <div className="mt-6">
+          <button
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-lg transition duration-300"
+          >
+            Update Profile
+          </button>
+        </div>
       </div>
     </div>
   );
