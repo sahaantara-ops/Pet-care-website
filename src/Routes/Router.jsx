@@ -14,6 +14,8 @@ import MyProfile from "../Pages/Myprofile";
 import PrivateRoutes from "../components/PrivateRoutes/PrivateRoutes";
 import SignIn from "../Pages/SignIn";
 import ServiceLayout from "../Layouts/ServiceLayout";
+import NotFound from "../Pages/NotFound";
+import ForgotPassword from "../Pages/forgotPassword";
 
 
 
@@ -77,13 +79,17 @@ const router = createBrowserRouter(
             {
                 path : "signup",
                 element:<SignUp></SignUp>,
+            },
+            {
+            path: "forgot-password",
+            element: <ForgotPassword />,
             }
         ],
     },
    
     {
         path:"*",
-        element:<h3>404 Not Found</h3>
+        element:<NotFound></NotFound>
     },
     ]);
 

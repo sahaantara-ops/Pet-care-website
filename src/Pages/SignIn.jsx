@@ -89,6 +89,10 @@ const Signin = () => {
       .catch((e) => {
         toast.error(e.message);
       });
+      navigate("/auth/forgot-password", {
+    state: { email },
+  });
+      
   };
 
   // console.log();
