@@ -9,7 +9,7 @@ import MyContainer from "../components/MyContainer/MyContainer";
 
 import { toast } from "react-toastify";
 import { useContext, useState } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../Context/AuthContext";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -75,7 +75,7 @@ const Signup = () => {
                     "Signup successful. Check your email to validate your account. "
                   );
                   setUser(null);
-                  navigate("/signin");
+                  navigate("/");
                 });
               })
               .catch((e) => {
@@ -186,7 +186,13 @@ const Signup = () => {
                 </span>
               </div>
 
-             <Link to ='/' className="btn btn-soft btn-warning">Sign Up</Link>
+             <button
+             type="submit"
+             className="btn btn-soft btn-warning w-full"
+            >
+            Sign Up
+            </button>
+
 
               <div className="text-center mt-3">
                 <p className="text-sm text-white/80">

@@ -12,7 +12,8 @@ import ServiceDetails from "../Pages/serviceDetails";
 import ProfileLayout from "../Layouts/profileLayout";
 import MyProfile from "../Pages/Myprofile";
 import PrivateRoutes from "../components/PrivateRoutes/PrivateRoutes";
-import Signin from "../Pages/SignIn";
+import SignIn from "../Pages/SignIn";
+import ServiceLayout from "../Layouts/ServiceLayout";
 
 
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter(
                 loader: () => fetch('/public.json'),
                 element:<Home></Home>,
             },
-            {
+         {
                 path:"/services",
                 element:<Services></Services>,
                loader: async () => {
@@ -39,21 +40,27 @@ const router = createBrowserRouter(
 
             },
             
+        
+],
+    },
+    {
+        path:"service",
+        element: <PrivateRoutes><ServiceLayout /></PrivateRoutes>,
+        children:[
             {
+
             path: "/service/:id",
             element: (
-            <PrivateRoutes>
-           <ServiceDetails />
-          </PrivateRoutes>
-         ),
-          }
-
-],
+            <ServiceDetails />
+          
+            ),
+            }
+            ], 
     },
 
     {
     path: "/profile",
-    Component: ProfileLayout,
+    element:<ProfileLayout></ProfileLayout>,
     children: [
       { index: true, element: <MyProfile /> },
     ],
@@ -64,19 +71,16 @@ const router = createBrowserRouter(
         element:<AuthLayout></AuthLayout>,
         children :[
             {
-                path :"signIn",
-                Component:Signin,
+                path :"signin",
+                element:<SignIn></SignIn>,
             },
             {
-                path : "signUp",
-                Component:SignUp,
+                path : "signup",
+                element:<SignUp></SignUp>,
             }
         ],
     },
-    // {
-    //     path:"/services",
-    //     element:<h3>Services Layout</h3>
-    // },
+   
     {
         path:"*",
         element:<h3>404 Not Found</h3>

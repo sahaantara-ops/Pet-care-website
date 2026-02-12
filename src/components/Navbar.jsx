@@ -81,7 +81,7 @@ const Navbar = () => {
           </div>
         ) : (
           <button className="bg-purple-500 text-white px-4 py-2 rounded-md font-semibold cursor-pointer">
-            <Link to={"/auth/signIn"}>Sign in</Link>
+            <Link to={"/auth/signin"}>Sign in</Link>
           </button>
         )}
       </MyContainer>

@@ -22,19 +22,7 @@ const ServiceDetails = () => {
 
   return (
     <div className="max-w-5xl mx-auto p-6">
-      
-      {/* Service Info */}
-      <div className="card bg-base-100 shadow-xl mb-8">
-        <figure>
-          <img src={service.image} alt={service.serviceName} />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title text-3xl">{service.serviceName}</h2>
-          <p>⭐ Rating: {service.rating}</p>
-          <p>💰 Price: ${service.price}</p>
-          <p>{service.description}</p>
-        </div>
-      </div>
+     
 
       {/* Booking Form */}
       <div className="card bg-base-200 shadow-lg p-6">

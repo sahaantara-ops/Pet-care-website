@@ -37,25 +37,26 @@ const Signin = () => {
 
   const handleSignin = (e) => {
     e.preventDefault();
-    const email = e.target.email?.value;
-    const password = e.target.password?.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
     console.log({ email, password });
     signInWithEmailAndPasswordFunc(email, password)
       .then((res) => {
         console.log(res);
         setLoading(false);
+        console.log(email ,"email",password,"password");
 
-        if (!res.user?.emailVerified) {
+        if (!res.user.emailVerified) {
           toast.error("Your email is not verified.");
           return;
         }
-        setUser(res.user);
+        
         toast.success("Signin successful");
         navigate(from);
       })
-      .catch((e) => {
-        console.log(e);
-        toast.error(e.message);
+      .catch((error) => {
+        console.log(error.code);
+        toast.error(error.message);
       });
   };
 
@@ -127,6 +128,7 @@ const Signin = () => {
                   placeholder="example@email.com"
                   className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
+                
               </div>
 
               <div className="relative">
