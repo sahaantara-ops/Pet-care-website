@@ -2,12 +2,15 @@ import { AuthContext } from "../Context/AuthContext";
 import { useContext, useState } from "react";
 import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
+import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext); // auth needed for updateProfile
   const [editMode, setEditMode] = useState(false);
   const [name, setName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
+  const navigate = useNavigate();
 
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
@@ -18,6 +21,7 @@ const MyProfile = () => {
         displayName: name,
         photoURL: photoURL,
       });
+       navigate("/"); 
 
       toast.success("Profile updated successfully!");
       setEditMode(false);
@@ -26,6 +30,7 @@ const MyProfile = () => {
       toast.error(error.message);
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-amber-100 flex items-center justify-center px-4">
@@ -39,7 +44,7 @@ const MyProfile = () => {
         </div>
 
         <div className="text-center mt-4">
-          <h2 className="text-2xl font-semibold text-gray-800">{user?.name}</h2>
+          <h2 className="text-2xl font-semibold text-gray-800">{user?.displayName}</h2>
           <p className="text-gray-500 mt-1">{user?.email}</p>
         </div>
 
